@@ -1,0 +1,12 @@
+#========================Docker===========================================================#
+docker build -t vaa_spices_services:1.0 .
+docker run -p 8888:80 vaa_spices_services:1.0 (browser - localhost:8888)
+docker image ls / docker images -a
+docker system prune / docker image prune -a (for removing dangling and ununsed images).
+docker rmi vaa_spices_services:1.0
+
+#========================gcloud===========================================================#
+Install the gcloud CLI (https://cloud.google.com/sdk/docs/install)
+CMD: gcloud auth login (https://cloud.google.com/sdk/gcloud/reference/auth/login?hl=en)
+CMD: docker tag vaa_spices_services:1.0 gcr.io/vaa-spices/vaa_spices_services:1.0 (tag image)
+CMD: docker push gcr.io/vaa-spices/vaa_spices_services:1.0 (push image to registry)
