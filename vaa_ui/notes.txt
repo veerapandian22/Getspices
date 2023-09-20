@@ -1,0 +1,14 @@
+#================================Angular=================================#
+npm install --prefix <directory> @angular/cli
+npm install -g @angular/cli / npm install @angular/cli
+ng new vaa_ui
+
+#================================Docker=================================#
+docker build -t vaa_ui:1.0 .
+docker run -p 8888:80 vaa_ui:1.0 (browser - localhost:8888)
+
+#========================gcloud===========================================================#
+Install the gcloud CLI (https://cloud.google.com/sdk/docs/install)
+CMD: gcloud auth login (https://cloud.google.com/sdk/gcloud/reference/auth/login?hl=en)
+CMD: docker tag vaa_ui:1.0 gcr.io/vaa-spices/vaa_ui:1.0 (tag image)
+CMD: docker push gcr.io/vaa-spices/vaa_ui:1.0 (push image to registry)
