@@ -8,6 +8,13 @@ import { FooterComponent } from './footer/footer.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { CartComponent } from './cart/cart.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { NewsComponent } from './news/news.component';
+import { ShopComponent } from './shop/shop.component';
+import { SinglenewsComponent } from './singlenews/singlenews.component';
+import { SingleproductComponent } from './singleproduct/singleproduct.component';
+import { Notfound404Component } from './notfound404/notfound404.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +23,14 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     FooterComponent,
     ContactComponent,
     AboutComponent,
-    DashboardComponent
+    DashboardComponent,
+    CartComponent,
+    CheckoutComponent,
+    NewsComponent,
+    ShopComponent,
+    SinglenewsComponent,
+    SingleproductComponent,
+    Notfound404Component
   ],
   imports: [
     BrowserModule,
