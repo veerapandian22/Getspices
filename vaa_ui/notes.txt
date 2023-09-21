@@ -2,6 +2,7 @@
 npm install --prefix <directory> @angular/cli
 npm install -g @angular/cli / npm install @angular/cli
 ng new vaa_ui
+ng g c <component>
 
 #================================Docker=================================#
 docker build -t vaa_ui:1.0 .
