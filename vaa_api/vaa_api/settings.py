@@ -20,12 +20,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-fi$givd@^6lup#*j_80q8d6nht=!&o_tmfgu2w5(v-x8#ap1m+'
+SECRET_KEY = 'django-insecure-ry57m5*okc=4m^96g9v+$9zx9z*&hs%#ig15^#!%3nitzpwrpo'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -38,7 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'users',
+    'user',
+    'subscribe',
+    'product',
+    'contact_us',
+    'cart',
+    'order',
 ]
 
 MIDDLEWARE = [
@@ -77,8 +82,12 @@ WSGI_APPLICATION = 'vaa_api.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'vaa_api',
+        'USER': 'veerapandian',
+        'PASSWORD': 'Welcome@123',
+        'HOST': 'localhost',
+        'PORT': '5432'
     }
 }
 
