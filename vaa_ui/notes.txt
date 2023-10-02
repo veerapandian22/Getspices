@@ -7,6 +7,8 @@ npm install (npm cache clean --force && npm install --force)
 npm ci
 npm start
 
+ng g service <service name>
+redirect with params: https://stackoverflow.com/questions/65279117/how-to-redirect-to-some-component-in-angular-when-the-url-has-multiple-variables
 #================================Docker=================================#
 docker build -t vaa_ui:1.0 .
 docker run -d --name vaa_ui -p 8888:80 vaa_ui:1.0 (browser - localhost:8888)

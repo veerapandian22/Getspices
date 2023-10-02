@@ -3,5 +3,5 @@ from .views import contact_us
 
 
 urlpatterns = [
-    path('contact_us', contact_us, name="contact_us")
+    path('contact_us/', contact_us, name="contact_us")
 ]

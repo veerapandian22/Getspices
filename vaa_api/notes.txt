@@ -61,3 +61,6 @@ kubectl get secret
 kubectl describe secret <hello-world-config>
 
 kubectl apply -f deployment.yaml
+
+#========================Header CORS===========================================================#
+https://stackoverflow.com/questions/62875723/how-to-send-an-access-control-allow-origin-header-using-django-3

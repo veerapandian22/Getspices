@@ -3,5 +3,5 @@ from .views import subscribe
 
 
 urlpatterns = [
-    path('subscribe', subscribe, name="subscribe")
+    path('subscribe/', subscribe, name="subscribe")
 ]

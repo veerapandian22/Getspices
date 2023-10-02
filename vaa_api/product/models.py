@@ -6,9 +6,8 @@ class Product(models.Model):
    image_path = models.CharField(max_length=30)
    price = models.CharField(max_length=6)
    stack_quantity = models.CharField(max_length=5)
-   grade = models.CharField(max_length=3)
    manufacturer_from  = models.CharField(max_length=30)
-   filter = models.CharField(null=True)
+   content = models.CharField(null=True)
    added_on = models.DateTimeField(auto_now_add=True)
    updated_at = models.DateTimeField(auto_now=True)
 

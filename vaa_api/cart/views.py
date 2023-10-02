@@ -5,7 +5,7 @@ from .models import Cart
 from .serializers import CartSerializer
 
 
-@api_view(['GET','POST'])
+@api_view(['GET','POST', 'DELETE'])
 def cart(request):
     if request.method == 'GET': 
         snippets = Cart.objects.all()
@@ -18,4 +18,8 @@ def cart(request):
             serializer.save() 
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+    elif request.method == 'DELETE':
+        snippets = Cart.objects.get(id=request.data['id']).delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
     

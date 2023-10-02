@@ -3,5 +3,5 @@ from .views import cart
 
 
 urlpatterns = [
-    path('cart', cart, name="cart")
+    path('cart/', cart, name="cart")
 ]

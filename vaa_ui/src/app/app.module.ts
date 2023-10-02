@@ -15,6 +15,8 @@ import { ShopComponent } from './shop/shop.component';
 import { SinglenewsComponent } from './singlenews/singlenews.component';
 import { SingleproductComponent } from './singleproduct/singleproduct.component';
 import { Notfound404Component } from './notfound404/notfound404.component';
+import { HttpClientModule } from '@angular/common/http'
+import { FormsModule } from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { Notfound404Component } from './notfound404/notfound404.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

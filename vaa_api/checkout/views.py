@@ -1,19 +1,19 @@
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from .models import Order
-from .serializers import OrderSerializer
+from .models import Checkout
+from .serializers import CheckoutSerializer
 
 
 @api_view(['GET','POST'])
-def order(request):
+def checkout(request):
     if request.method == 'GET': 
-        snippets = Order.objects.all()
-        serializer = OrderSerializer(snippets, many=True)
+        snippets = Checkout.objects.all()
+        serializer = CheckoutSerializer(snippets, many=True)
         return Response(serializer.data)
     
     elif request.method == 'POST': 
-        serializer = OrderSerializer(data=request.data)
+        serializer = CheckoutSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save() 
             return Response(serializer.data, status=status.HTTP_201_CREATED)
