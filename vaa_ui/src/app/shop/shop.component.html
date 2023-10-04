@@ -56,7 +56,7 @@
         <p class="product-price"><span>Grade: {{ product_list.grade }}</span></p>
         <p class="product-price"><span>Stack Quantity: {{ product_list.stack_quantity }}</span></p>
         <p class="product-price"><span>Manufacturer From: {{ product_list.manufacturer_from }}</span></p>
-        <a href="single_product" class="cart-btn"><i class="fas fa-shopping-cart"></i> View Details</a>
+        <a href="#" (click)="redirectToSingleProduct(product_list.id)" class="cart-btn"><i class="fas fa-shopping-cart"></i> View Details</a>
         <a href="#" (click)="redirectToCart(product_list.id, product_list.product, product_list.name, product_list.image_path, product_list.price)" class="cart-btn">
             <i class="fas fa-shopping-cart"></i> Add to Cart</a>
         </div>

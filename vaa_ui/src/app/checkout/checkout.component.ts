@@ -28,6 +28,12 @@ export class CheckoutComponent {
     this.api.addPlaceOderDetails(data).subscribe((result) => {
       console.warn('placeOrder', result)
     })
+    this.redirectToOrderDetails();
+  }
+
+  redirectToOrderDetails() {
+    // FIXME: user id
+    this.router.navigate(['user_order_details'], { queryParams: {login_user_id: 1}});
   }
 
 }

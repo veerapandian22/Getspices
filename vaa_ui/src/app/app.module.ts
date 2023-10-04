@@ -16,7 +16,8 @@ import { SinglenewsComponent } from './singlenews/singlenews.component';
 import { SingleproductComponent } from './singleproduct/singleproduct.component';
 import { Notfound404Component } from './notfound404/notfound404.component';
 import { HttpClientModule } from '@angular/common/http'
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
+import { UserOrderDetailsComponent } from './user-order-details/user-order-details.component'
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { FormsModule } from '@angular/forms'
     ShopComponent,
     SinglenewsComponent,
     SingleproductComponent,
-    Notfound404Component
+    Notfound404Component,
+    UserOrderDetailsComponent
   ],
   imports: [
     BrowserModule,

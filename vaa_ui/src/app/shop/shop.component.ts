@@ -52,4 +52,8 @@ export class ShopComponent {
     });
   }
 
+  redirectToSingleProduct(single_product_id: any) {
+    this.router.navigate(['single_product'], { queryParams: { single_product_id: single_product_id }});
+  }
+
 }

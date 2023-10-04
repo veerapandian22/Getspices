@@ -28,8 +28,8 @@ def productFilter(request, product_id):
         return Response(serializer.data)
 
 @api_view(['GET'])
-def singleProduct(request, single_product_id, product_id):
+def singleProduct(request, single_product_id):
     if request.method == 'GET':
-        snippets = ProductList.objects.filter(id = single_product_id, product_id = product_id)
+        snippets = ProductList.objects.filter(id = single_product_id)
         serializer = ProductListSerializer(snippets, many=True)
         return Response(serializer.data)
