@@ -91,7 +91,7 @@
         </div>
         <div class="content">
             <h3>Free Shipping</h3>
-            <p>When order over Rs.2000</p>
+            <p>When order above Rs.500</p>
         </div>
         </div>
     </div>
@@ -113,7 +113,7 @@
         </div>
         <div class="content">
             <h3>Refund</h3>
-            <p>Get refund within 3 days!</p>
+            <p>Get refund within 1 day!</p>
         </div>
         </div>
     </div>
@@ -130,40 +130,22 @@
     <div class="col-lg-8 offset-lg-2 text-center">
         <div class="section-title">
         <h3><span class="orange-text">Our</span> Products</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet beatae optio.</p>
+        <p>Cardamom & Pepper is a popular spice used in cuisines all over the world, known for its strong aroma and distinct flavor. .</p>
         </div>
     </div>
     </div>
 
     <div class="row">
-    <div class="col-lg-4 col-md-6 text-center">
+    <div *ngFor="let product of products" class="col-lg-4 col-md-6 text-center">
         <div class="single-product-item">
         <div class="product-image">
-            <a href="single-product.html"><img src="../assets/img/new-products/cardamom.jpg" alt=""></a>
+            <img src="../assets/img/products/product-img-1.jpg" alt="">
         </div>
-        <h3>Cardamom</h3>
-        <p class="product-price"><span>Per Kg</span> 85$ </p>
-        <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-        </div>
-    </div>
-    <div class="col-lg-4 col-md-6 text-center">
-        <div class="single-product-item">
-        <div class="product-image">
-            <a href="single-product.html"><img src="../assets/img/new-products/pepper.jpg" alt=""></a>
-        </div>
-        <h3>Pepper</h3>
-        <p class="product-price"><span>Per Kg</span> 70$ </p>
-        <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-        </div>
-    </div>
-    <div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0 text-center">
-        <div class="single-product-item">
-        <div class="product-image">
-            <a href="single-product.html"><img src="../assets/img/products/product-img-3.jpg" alt=""></a>
-        </div>
-        <h3>Lemon</h3>
-        <p class="product-price"><span>Per Kg</span> 35$ </p>
-        <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+        <h3>{{ product.name }}</h3>
+        <p class="product-price"><span>Per Kg: Rs.{{ product.price }}</span></p>
+        <p class="product-price"><span>Stack Quantity: {{ product.stack_quantity }}</span></p>
+        <p class="product-price"><span>Manufacturer From: {{ product.manufacturer_from }}</span></p>
+        <a href="" (click)="redirectToShop(product.id)" class="cart-btn"><i class="fas fa-shopping-cart"></i>Buy Now</a>
         </div>
     </div>
     </div>
@@ -272,7 +254,7 @@
         <h2>We are <span class="orange-text">Fruitkha</span></h2>
         <p>Etiam vulputate ut augue vel sodales. In sollicitudin neque et massa porttitor vestibulum ac vel nisi. Vestibulum placerat eget dolor sit amet posuere. In ut dolor aliquet, aliquet sapien sed, interdum velit. Nam eu molestie lorem.</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente facilis illo repellat veritatis minus, et labore minima mollitia qui ducimus.</p>
-        <a routerLink="about" class="boxed-btn mt-4">know more</a>
+        <a href="about" class="boxed-btn mt-4">know more</a>
         </div>
     </div>
     </div>

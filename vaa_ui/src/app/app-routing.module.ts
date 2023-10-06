@@ -10,6 +10,7 @@ import { ShopComponent } from './shop/shop.component';
 import { SinglenewsComponent } from './singlenews/singlenews.component';
 import { SingleproductComponent } from './singleproduct/singleproduct.component';
 import { Notfound404Component } from './notfound404/notfound404.component';
+import { UserOrderDetailsComponent } from './user-order-details/user-order-details.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'shop', component: ShopComponent },
   { path: 'single_news', component: SinglenewsComponent },
   { path: 'single_product', component: SingleproductComponent },
+  { path: 'user_order_details', component: UserOrderDetailsComponent },
   { path: 'not_found_404', component: Notfound404Component }
 ];
 

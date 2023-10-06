@@ -42,15 +42,19 @@
                 </div>
             </div>
             <div class="col-md-7">
-                <div class="single-product-content">
-                    <h3>Green apples have polyphenols</h3>
-                    <p class="single-product-pricing"><span>Per Kg</span> $50</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta sint dignissimos, rem commodi cum voluptatem quae reprehenderit repudiandae ea tempora incidunt ipsa, quisquam animi perferendis eos eum modi! Tempora, earum.</p>
+                <div *ngFor="let single_product_detail of single_product_details" class="single-product-content">
+                    <h3>{{ single_product_detail.name }}</h3>
+                    <p class="single-product-pricing"><span>Per Kg: Rs.{{ single_product_detail.price }}</span></p>
+                    <p class="product-price"><span>Grade: {{ single_product_detail.grade }}</span></p>
+                    <p class="product-price"><span>Stack Quantity: {{ single_product_detail.stack_quantity }}</span></p>
+                    <p class="product-price"><span>Manufacturer From: {{ single_product_detail.manufacturer_from }}</span></p>
+                    <p> {{ single_product_detail.manufacturer_from }} </p>
                     <div class="single-product-form">
                         <form action="index.html">
                             <input type="number" placeholder="0">
                         </form>
-                        <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+                        <a href="#" (click)="redirectToCart(single_product_detail.id, single_product_detail.product, single_product_detail.name, single_product_detail.image_path, single_product_detail.price)" class="cart-btn">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart</a>
                         <p><strong>Categories: </strong>Fruits, Organic</p>
                     </div>
                     <h4>Share:</h4>

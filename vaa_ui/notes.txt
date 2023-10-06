@@ -3,13 +3,27 @@ npm install --prefix <directory> @angular/cli
 npm install -g @angular/cli / npm install @angular/cli
 ng new vaa_ui
 ng g c <component>
+npm install (npm cache clean --force && npm install --force)
+npm ci
+npm start
 
+ng g service <service name>
+redirect with params: https://stackoverflow.com/questions/65279117/how-to-redirect-to-some-component-in-angular-when-the-url-has-multiple-variables
 #================================Docker=================================#
 docker build -t vaa_ui:1.0 .
-docker run -p 8888:80 vaa_ui:1.0 (browser - localhost:8888)
+docker run -d --name vaa_ui -p 8888:80 vaa_ui:1.0 (browser - localhost:8888)
+docker stop vaa_ui
+{
+    CID=$(docker run -d --name vaa_ui -p 8888:80 vaa_ui:1.0)
+    docker stop $CID
+    docker rm $CID
+}
+docker-compose config (verify compose.yml)
+docker-compose up (docker-compose up -d --scale database=4 [will create 4 database instance])
+docker-compose down
 
 #========================gcloud===========================================================#
 Install the gcloud CLI (https://cloud.google.com/sdk/docs/install)
-CMD: gcloud auth login (https://cloud.google.com/sdk/gcloud/reference/auth/login?hl=en)
-CMD: docker tag vaa_ui:1.0 gcr.io/vaa-spices/vaa_ui:1.0 (tag image)
-CMD: docker push gcr.io/vaa-spices/vaa_ui:1.0 (push image to registry)
+gcloud auth login (https://cloud.google.com/sdk/gcloud/reference/auth/login?hl=en)
+docker tag vaa_ui:1.0 gcr.io/vaa-spices/vaa_ui:1.0
+docker push gcr.io/vaa-spices/vaa_ui:1.0

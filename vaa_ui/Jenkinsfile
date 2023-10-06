@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+    stages {
+        stage('Git Checkout') {
+            steps {
+                git branch: 'main', changelog: false, credentialsId: 'f196eeaa-f27e-42b3-bd74-1ff36debe6b0', poll: false, url: 'https://github.com/veerapandian22/VAA.git'
+            }
+        }
+        stage('Build Docker Image') {
+			steps {
+				sh 'docker build -t vaa_ui:1.0 .'
+			}
+		}
+        stage('Start/Stop Container') {
+			steps {
+				sh 'CID=$(docker run -d --name vaa_ui -p 8888:80 vaa_ui:1.0) && docker stop $CID && docker rm $CID'
+			}
+		}
+		stage('Stop Container') {
+			steps {
+				sh 'docker stop $CID && docker rm $CID'
+			}
+		}
+    }
+}
