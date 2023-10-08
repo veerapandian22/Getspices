@@ -1,3 +1,6 @@
+#Create db
+#create schema
+
 #Env setup
 pythom -m venv gs_env
 gs_env/script/activate
