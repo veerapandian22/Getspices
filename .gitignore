@@ -1,3 +1,7 @@
 gs_api_env/
-gs_spices_api/__pycache__/*
+gs_spices_api/__pycache__/run.cpython-311.pyc
+gs_spices_api/__pycache__/app.cpython-311.pyc
+gs_spices_api/__pycache__/config.cpython-311.pyc
+gs_spices_api/app/routes/__pycache__/products.cpython-311.pyc
 .vscode/
+__pycache__/
