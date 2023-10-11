@@ -6,18 +6,21 @@ from pydantic import BaseModel
 
 database = databases.Database(settings.connection_string)
 
-metadata = sqlalchemy.MetaData(schema="SpiceInventory")
+metadata = sqlalchemy.MetaData(schema=settings.schema_name)
 
-notes = sqlalchemy.Table(
-    "notes",
+product_table = sqlalchemy.Table(
+    "product",
     metadata,
     sqlalchemy.Column("id", sqlalchemy.Integer, primary_key=True),
-    sqlalchemy.Column("text", sqlalchemy.String),
-    sqlalchemy.Column("completed", sqlalchemy.Boolean),
+    sqlalchemy.Column("product_code", sqlalchemy.String),
+    sqlalchemy.Column("product_name", sqlalchemy.String),
+    sqlalchemy.Column("product_desc", sqlalchemy.String),
+    #sqlalchemy.Column("create_date", sqlalchemy.DateTime),
 )
 
 
 engine = sqlalchemy.create_engine(
-    settings.connection_string, connect_args={"check_same_thread": False}
+    settings.connection_string
 )
+
 metadata.create_all(engine)

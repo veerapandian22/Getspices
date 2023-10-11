@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.config import settings
 from app.routes import products, order
-# from app.db import database
+from app.db import database
 
 app = FastAPI()
 
@@ -21,9 +21,13 @@ app = FastAPI()
 app.include_router(products.router, tags=['Products'], prefix='/api/products')
 app.include_router(order.router, tags=['Order'], prefix='/api/order')
 
-# @app.on_event("startup")
-# async def startup():
-#     await database.connect()
+@app.on_event("startup")
+async def startup():
+    await database.connect()
+
+@app.on_event("shutdown")
+async def shutdown():
+    await database.disconnect()
 
 @app.get('/api/healthchecker')
 def root():
