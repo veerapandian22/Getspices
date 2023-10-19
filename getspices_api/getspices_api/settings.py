@@ -91,9 +91,9 @@ DATABASES = {
         'OPTIONS' : {
             'options': '-c search_path=getspices'
         },
-        'NAME': 'getspices',
+        'NAME': 'Getspices',
         'USER': 'veerapandian',
-        'PASSWORD': 'r00t',
+        'PASSWORD': 'root',
         'HOST': 'localhost',
         'PORT': '5432'
     }
