@@ -10,6 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class CartComponent {
 
+  isSuccess = false;
   current_user_id: any;
   items_in_cart: any
 
@@ -18,12 +19,14 @@ export class CartComponent {
     private router: Router,
     private activeRoute: ActivatedRoute
   ) {
-    this.activeRoute.queryParams.subscribe((params: any) => { this.current_user_id = params });
+    this.activeRoute.queryParams.subscribe((params: any) => { 
+      this.current_user_id = params;
+    });
   }
 
   ngOnInit() {
     this.cartDetails();
-    console.warn(this.current_user_id);
+    this.isSuccess = true;
   }
 
   cartDetails() {

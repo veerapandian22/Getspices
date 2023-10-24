@@ -28,5 +28,21 @@ export class ShopDetailsComponent {
     this.api.getSingleItem(this.single_item_id).subscribe((data: any) => { this.single_item_details = data });
   }
 
+  redirectToCart(product_id: number, product_item_id: number) {
+    // FIXME: current_user_id
+    const current_user_id = 1;
+    this.addToCart(current_user_id, product_id, product_item_id);
+    this.router.navigate(['cart'], { queryParams: { user_id: current_user_id }});
+  }
+
+  addToCart(user_id: number, product_id: number, product_item_id: number) {
+    const data = new FormData();
+    data.append('user_id', String(user_id));
+    data.append('product_id', String(product_id));
+    data.append('product_item_id', String(product_item_id));
+
+    this.api.addToCart(data).subscribe((res: any) => {});
+  }
+
 
 }

@@ -23,7 +23,6 @@ export class CheckoutComponent {
 
   onPlaceOrder(data: any) {
     // FIXME: user id
-    console.warn(data)
     data["user_id"] = 1;
     this.api.placeOrder(data).subscribe((res) => { console.warn('placeOrder', res) })
     this.redirectToDeliveryInfo();

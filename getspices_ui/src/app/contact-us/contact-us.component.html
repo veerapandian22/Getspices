@@ -112,16 +112,17 @@
                 </div>
             </div>
         </div>
-        <form action="#">
+        <p *ngIf="isSuccess" class="success">Thank you for getting in touch! We appreciate you contacting us.</p>
+        <form type="POST" #contactUs="ngForm" (ngSubmit)="onSubmit(contactUs.value, contactUs)">
             <div class="row">
                 <div class="col-lg-6 col-md-6">
-                    <input type="text" placeholder="Your name">
+                    <input type="text" ngModel name="name" placeholder="Your name">
                 </div>
                 <div class="col-lg-6 col-md-6">
-                    <input type="text" placeholder="Your Email">
+                    <input type="text" ngModel name="email" placeholder="Your Email">
                 </div>
                 <div class="col-lg-12 text-center">
-                    <textarea placeholder="Your message"></textarea>
+                    <textarea ngModel name="message" placeholder="Your message"></textarea>
                     <button type="submit" class="site-btn">SEND MESSAGE</button>
                 </div>
             </div>

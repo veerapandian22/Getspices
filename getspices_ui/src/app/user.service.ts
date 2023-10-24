@@ -36,4 +36,8 @@ export class UserService {
     return this.http.post<any>('http://127.0.0.1:8000/api/billing_address', data);
   }
 
+  contactUS(data: any) {
+    return this.http.post<any>('http://127.0.0.1:8000/api/contact', data);
+  }
+
 }
