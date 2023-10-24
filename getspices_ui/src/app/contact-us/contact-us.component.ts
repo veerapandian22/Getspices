@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { UserService } from '../user.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import {NgForm} from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-contact-us',
@@ -10,13 +11,12 @@ import {NgForm} from '@angular/forms';
   styleUrls: ['./contact-us.component.css']
 })
 export class ContactUsComponent {
-
-  isSuccess = false;
   
   constructor(
     private api: UserService,
     private router: Router,
-    private activeRoute: ActivatedRoute
+    private activeRoute: ActivatedRoute,
+    private toastr: ToastrService
   ) {}
 
   onSubmit(data: any, contactUs : NgForm) {
@@ -27,8 +27,7 @@ export class ContactUsComponent {
   }
 
   showSuccessMsg() {
-    this.isSuccess = false;
-    setTimeout(() => { this.isSuccess = true; }, 4000);
+    this.toastr.success('We appreciate you contacting us.', 'Thank you for getting in touch!');
   }
 
 
