@@ -16,6 +16,8 @@ import { DeliveryInfoComponent } from './delivery-info/delivery-info.component';
 import { SitemapComponent } from './sitemap/sitemap.component';
 import { InnovationComponent } from './innovation/innovation.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { ShopDetailsComponent } from './shop-details/shop-details.component';
 
 @NgModule({
   declarations: [
@@ -31,12 +33,14 @@ import { HttpClientModule } from '@angular/common/http';
     ContactUsComponent,
     DeliveryInfoComponent,
     SitemapComponent,
-    InnovationComponent
+    InnovationComponent,
+    ShopDetailsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

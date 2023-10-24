@@ -12,6 +12,7 @@
                         <li><a href="#">Green Cardamom</a></li>
                         <li><a href="#">Black Pepper</a></li>
                         <li><a href="#">Cave Honey</a></li>
+                        <li><a href="#">Nuts</a></li>
                     </ul>
                 </div>
             </div>
@@ -60,135 +61,21 @@
                 <div class="section-title">
                     <h2>Featured Product</h2>
                 </div>
-                <div class="featured__controls">
-                    <ul>
-                        <li class="active" data-filter="*">All</li>
-                        <li data-filter=".oranges">Oranges</li>
-                        <li data-filter=".fresh-meat">Fresh Meat</li>
-                        <li data-filter=".vegetables">Vegetables</li>
-                        <li data-filter=".fastfood">Fastfood</li>
-                    </ul>
-                </div>
             </div>
         </div>
         <div class="row featured__filter">
-            <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
-                <div class="featured__item">
-                    <div class="featured__item__pic set-bg" style="background: url('../assets/img/featured/feature-1.jpg')">
-                        <ul class="featured__item__pic__hover">
-                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                            <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="featured__item__text">
-                        <h6><a href="#">Crab Pool Security</a></h6>
-                        <h5>$30.00</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 mix vegetables fastfood">
-                <div class="featured__item">
-                    <div class="featured__item__pic set-bg" style="background: url('../assets/img/featured/feature-2.jpg')">
-                        <ul class="featured__item__pic__hover">
-                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                            <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="featured__item__text">
-                        <h6><a href="#">Crab Pool Security</a></h6>
-                        <h5>$30.00</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 mix vegetables fresh-meat">
+            <div  *ngFor="let product of products" class="col-lg-3 col-md-4 col-sm-6 mix" >
                 <div class="featured__item">
                     <div class="featured__item__pic set-bg" style="background: url('../assets/img/featured/feature-3.jpg')">
                         <ul class="featured__item__pic__hover">
                             <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                            <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                            <li><a href="" (click)="redirectToShop(product.id)"><i class="fa fa-eye"></i></a></li>
+                            <li><a href="" (click)="redirectToShop(product.id)"><i class="fa fa-shopping-bag"></i></a></li>
                         </ul>
                     </div>
                     <div class="featured__item__text">
-                        <h6><a href="#">Crab Pool Security</a></h6>
-                        <h5>$30.00</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 mix fastfood oranges">
-                <div class="featured__item">
-                    <div class="featured__item__pic set-bg" style="background: url('../assets/img/featured/feature-4.jpg')">
-                        <ul class="featured__item__pic__hover">
-                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                            <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="featured__item__text">
-                        <h6><a href="#">Crab Pool Security</a></h6>
-                        <h5>$30.00</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 mix fresh-meat vegetables">
-                <div class="featured__item">
-                    <div class="featured__item__pic set-bg" style="background: url('../assets/img/featured/feature-5.jpg')">
-                        <ul class="featured__item__pic__hover">
-                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                            <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="featured__item__text">
-                        <h6><a href="#">Crab Pool Security</a></h6>
-                        <h5>$30.00</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fastfood">
-                <div class="featured__item">
-                    <div class="featured__item__pic set-bg" style="background: url('../assets/img/featured/feature-6.jpg')">
-                        <ul class="featured__item__pic__hover">
-                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                            <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="featured__item__text">
-                        <h6><a href="#">Crab Pool Security</a></h6>
-                        <h5>$30.00</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 mix fresh-meat vegetables">
-                <div class="featured__item">
-                    <div class="featured__item__pic set-bg" style="background: url('../assets/img/featured/feature-7.jpg')">
-                        <ul class="featured__item__pic__hover">
-                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                            <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="featured__item__text">
-                        <h6><a href="#">Crab Pool Security</a></h6>
-                        <h5>$30.00</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 mix fastfood vegetables">
-                <div class="featured__item">
-                    <div class="featured__item__pic set-bg" style="background: url('../assets/img/featured/feature-8.jpg')">
-                        <ul class="featured__item__pic__hover">
-                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                            <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="featured__item__text">
-                        <h6><a href="#">Crab Pool Security</a></h6>
-                        <h5>$30.00</h5>
+                        <h6><a href="#">{{ product.product_name }}</a></h6>
+                        <h5>Rs.{{ product.product_price }}</h5>
                     </div>
                 </div>
             </div>
@@ -215,11 +102,12 @@
                     </div>
                     <div class="blog__item__text">
                         <ul>
-                            <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
+                            <li><i class="fa fa-calendar-o"></i> 23 Oct 2023</li>
                             <li><i class="fa fa-comment-o"></i> 5</li>
                         </ul>
-                        <h5><a href="#">Cooking tips make cooking simple</a></h5>
-                        <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
+                        <h5><a href="#">Cardamom Tea & Biryani</a></h5>
+                        <p>Cardamom tea aids in digestion and prevents bloating. Drinking cardamom tea after or while having food is great for digestion. 
+                            In most biryani recipes, Elaichi (Cardamom) is used to add flavour to the dish. </p>
                     </div>
                 </div>
             </div>
@@ -230,11 +118,13 @@
                     </div>
                     <div class="blog__item__text">
                         <ul>
-                            <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
+                            <li><i class="fa fa-calendar-o"></i> 23 Oct 2023</li>
                             <li><i class="fa fa-comment-o"></i> 5</li>
                         </ul>
-                        <h5><a href="#">6 ways to prepare breakfast for 30</a></h5>
-                        <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
+                        <h5><a href="#">Black Pepper</a></h5>
+                        <p>Black pepper is a good source of manganese, a mineral that can help with bone health, wound healing, and metabolism.
+                            Use black pepper as an ingredient in recipes to add flavor and spice to meats, fish, vegetables, salad dressings, soups, stir-fries, pasta, and more.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -245,11 +135,12 @@
                     </div>
                     <div class="blog__item__text">
                         <ul>
-                            <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
+                            <li><i class="fa fa-calendar-o"></i> 23 Oct 2023</li>
                             <li><i class="fa fa-comment-o"></i> 5</li>
                         </ul>
-                        <h5><a href="#">Visit the clean farm in the US</a></h5>
-                        <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
+                        <h5><a href="#">Visit our clean farm in the Kerala</a></h5>
+                        <p>The ultimate goal of farming is not the growing of crops, but the cultivation and perfection of human beings." "The master's eye is the best fertilizer." 
+                            "We have neglected the truth that a good farmer is a craftsman of the highest order, a kind of artist.</p>
                     </div>
                 </div>
             </div>

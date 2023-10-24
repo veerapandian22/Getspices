@@ -25,5 +25,9 @@ export class DashboardComponent {
     this.api.getProducts().subscribe((data)=>{this.products = data});
   }
 
+  redirectToShop(id: number) {
+    this.router.navigate(['shop'], { queryParams: {product_id: id}});
+  }
+
 
 }
