@@ -46,7 +46,10 @@ INSTALLED_APPS = [
     'product_items',
     'cart',
     'billing_address',
-    'orders'
+    'orders',
+    'payment',
+    'order_pivot_ids',
+    'order_tracking'
 ]
 
 MIDDLEWARE = [

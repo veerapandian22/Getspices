@@ -5,6 +5,7 @@ import { ShopComponent } from './shop/shop.component';
 import { ShopDetailsComponent } from './shop-details/shop-details.component';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { PaymentComponent } from './payment/payment.component';
 import { BlogComponent } from './blog/blog.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'shop_details', component: ShopDetailsComponent },
   { path: 'cart', component: CartComponent },
   { path: 'checkout', component: CheckoutComponent },
+  { path: 'payment', component: PaymentComponent },
   { path: 'delivery_info', component: DeliveryInfoComponent },
   { path: 'blog', component: BlogComponent },
   { path: 'about_us', component: AboutUsComponent },

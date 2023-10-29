@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-delivery-info',
@@ -6,5 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./delivery-info.component.css']
 })
 export class DeliveryInfoComponent {
+
+  constructor(
+    private toastr: ToastrService
+  ) {}
+
+  ngOnInit() {
+    this.showSuccess();
+  }
+
+  showSuccess() {
+    this.toastr.success('Order placed successfully!');
+  }
 
 }

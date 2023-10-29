@@ -20,6 +20,7 @@ import { FormsModule } from '@angular/forms';
 import { ShopDetailsComponent } from './shop-details/shop-details.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { PaymentComponent } from './payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ToastrModule } from 'ngx-toastr';
     DeliveryInfoComponent,
     SitemapComponent,
     InnovationComponent,
-    ShopDetailsComponent
+    ShopDetailsComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,

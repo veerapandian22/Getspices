@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { UserService } from '../user.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-cart',
@@ -10,14 +11,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class CartComponent {
 
-  isSuccess = false;
   current_user_id: any;
   items_in_cart: any
 
   constructor(
     private api: UserService,
     private router: Router,
-    private activeRoute: ActivatedRoute
+    private activeRoute: ActivatedRoute,
+    private toastr: ToastrService
   ) {
     this.activeRoute.queryParams.subscribe((params: any) => { 
       this.current_user_id = params;
@@ -26,7 +27,7 @@ export class CartComponent {
 
   ngOnInit() {
     this.cartDetails();
-    this.isSuccess = true;
+    this.itemAddedMsg();
   }
 
   cartDetails() {
@@ -41,12 +42,21 @@ export class CartComponent {
       body: { id: id },
     };
     this.api.removeItemFromCart(data).subscribe((res: any) => { this.cartDetails(); });
+    this.itemRemovedMsg();
   }
 
   redirectToCheckout() {
     // FIXME: user_id
     const user_id = 1;
     this.router.navigate(['checkout'], { queryParams: {user_id: user_id}});
+  }
+
+  itemAddedMsg() {
+    this.toastr.success("Product successfully added to your cart");
+  }
+
+  itemRemovedMsg() {
+    this.toastr.success("Product removed from your cart");
   }
 
 

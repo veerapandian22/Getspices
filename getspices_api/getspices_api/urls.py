@@ -24,15 +24,23 @@ from product_items import urls as product_item_urls
 from cart import urls as cart_urls
 from billing_address import urls as billing_address_urls
 from orders import urls as orders_urls
+from payment import urls as payment_urls
+from order_pivot_ids import urls as order_pivot_urls
+from order_tracking import urls as order_tracking_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include(user_urls)),
-    path('api/', include(subscribe_urls)),
-    path('api/', include(contact_urls)),
-    path('api/', include(product_urls)),
-    path('api/', include(product_item_urls)),
-    path('api/', include(cart_urls)),
-    path('api/', include(billing_address_urls)),
-    path('api/', include(orders_urls))
+    path('api/', include([
+        path('', include(user_urls)),
+        path('', include(subscribe_urls)),
+        path('', include(contact_urls)),
+        path('', include(product_urls)),
+        path('', include(product_item_urls)),
+        path('', include(cart_urls)),
+        path('', include(billing_address_urls)),
+        path('', include(orders_urls)),
+        path('', include(payment_urls)),
+        path('', include(order_pivot_urls)),
+        path('', include(order_tracking_urls)),
+    ])),
 ]

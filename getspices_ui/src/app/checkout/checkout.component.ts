@@ -25,12 +25,12 @@ export class CheckoutComponent {
     // FIXME: user id
     data["user_id"] = 1;
     this.api.placeOrder(data).subscribe((res) => { console.warn('placeOrder', res) })
-    this.redirectToDeliveryInfo();
+    this.redirectToPayment();
   }
 
-  redirectToDeliveryInfo() {
+  redirectToPayment() {
     // FIXME: user id
-    this.router.navigate(['delivery_info'], { queryParams: {user_id: 1}});
+    this.router.navigate(['payment'], { queryParams: {user_id: 1}});
   }
 
 }

@@ -1,0 +1,1042 @@
+{
+	"info": {
+		"_postman_id": "74fa2a0a-7d9c-40c4-987c-1c57abedc8c0",
+		"name": "getspices",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6431798",
+		"_collection_link": "https://speeding-zodiac-804588.postman.co/workspace/New-Team-Workspace~cdfb0113-0bb8-402f-9de0-5252235b829b/collection/6431798-74fa2a0a-7d9c-40c4-987c-1c57abedc8c0?action=share&source=collection_link&creator=6431798"
+	},
+	"item": [
+		{
+			"name": "user",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/user",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "veerapandian",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "veerapandian@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "mobile_no",
+							"value": "1234567890",
+							"type": "text"
+						},
+						{
+							"key": "is_admin",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "is_active",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/user",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "subscribe",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "veera@gmail.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/subscribe",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"subscribe"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "contact",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "veera",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "veera@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "message",
+							"value": "test message",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/contact",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"contact"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "hsn_code",
+							"value": "H001",
+							"type": "text"
+						},
+						{
+							"key": "product_code",
+							"value": "C001",
+							"type": "text"
+						},
+						{
+							"key": "product_name",
+							"value": "Cardamom",
+							"type": "text"
+						},
+						{
+							"key": "product_img_path",
+							"value": "/img/path/",
+							"type": "text"
+						},
+						{
+							"key": "product_desc",
+							"value": "desc",
+							"type": "text"
+						},
+						{
+							"key": "product_price",
+							"value": "1000",
+							"type": "text"
+						},
+						{
+							"key": "stack_qty",
+							"value": "20",
+							"type": "text"
+						},
+						{
+							"key": "available_qty",
+							"value": "5",
+							"type": "text"
+						},
+						{
+							"key": "manufacturer_from",
+							"value": "Idukki",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/product",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "product",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/product",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "product_item",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/product_item",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"product_item"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "product_item",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "product_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "item_code",
+							"value": "IC001",
+							"type": "text"
+						},
+						{
+							"key": "item_name",
+							"value": "cardamom",
+							"type": "text"
+						},
+						{
+							"key": "item_grade",
+							"value": "A+",
+							"type": "text"
+						},
+						{
+							"key": "item_img_path",
+							"value": "/img/path/",
+							"type": "text"
+						},
+						{
+							"key": "item_desc",
+							"value": "desc",
+							"type": "text"
+						},
+						{
+							"key": "item_price",
+							"value": "2500",
+							"type": "text"
+						},
+						{
+							"key": "stack_qty",
+							"value": "100",
+							"type": "text"
+						},
+						{
+							"key": "available_qty",
+							"value": "67",
+							"type": "text"
+						},
+						{
+							"key": "manufacturer_from",
+							"value": "Idukki",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/product_item",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"product_item"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "product_item/<int:product_id>",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/product_item/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"product_item",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "single_item_details/<int:single_item_id>",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/single_item_details/3",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"single_item_details",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cart",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "user_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "product_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "product_item_id",
+							"value": "3",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/cart",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cart",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/cart",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cart/<int:user_id>",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/cart/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"cart",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cart",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "2",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/cart",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "billing_address",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "user_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "first_name",
+							"value": "veera",
+							"type": "text"
+						},
+						{
+							"key": "last_name",
+							"value": "r",
+							"type": "text"
+						},
+						{
+							"key": "mobile_no",
+							"value": "1234567890",
+							"type": "text"
+						},
+						{
+							"key": "user_mail",
+							"value": "veera@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "state",
+							"value": "Kerala",
+							"type": "text"
+						},
+						{
+							"key": "city",
+							"value": "Santhanpara",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "Pallikkunnu",
+							"type": "text"
+						},
+						{
+							"key": "pincode",
+							"value": "685619",
+							"type": "text"
+						},
+						{
+							"key": "order_notes",
+							"value": "notes",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/billing_address",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"billing_address"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "billing_address",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/billing_address",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"billing_address"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "orders/<int:login_user_id>",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/orders/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"orders",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "payment",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/payment",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"payment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "payment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "user_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "is_payment_success",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "is_upi",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "upi_amount_payed",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "is_cash_on_delivery",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "cash_amount_payed",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "is_verified_by_admin",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "payment_verified_admin_name",
+							"value": "system",
+							"type": "text"
+						},
+						{
+							"key": "payment_verified_date",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "order_id",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/payment",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"payment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "order_tracking",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/order_tracking",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"order_tracking"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "order_tracking",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "user_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "order_placed",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "order_processed",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "order_ready_to_ship",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "order_shipped",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "shipping_details",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "order_delivered",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/order_tracking",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"order_tracking"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "order_tracking",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "user_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "order_placed",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "order_processed",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "order_ready_to_ship",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "order_shipped",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "shipping_details",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "order_delivered",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/order_tracking",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"order_tracking"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "order_pivot_ids",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/order_pivot_ids",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"order_pivot_ids"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "order_pivot_ids",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "user_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "order_id",
+							"value": "17",
+							"type": "text"
+						},
+						{
+							"key": "billing_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "payment_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "order_tracking_id",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/order_pivot_ids",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"order_pivot_ids"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "order_pivot_ids",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "user_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "order_id",
+							"value": "17",
+							"type": "text"
+						},
+						{
+							"key": "billing_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "payment_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "order_tracking_id",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/order_pivot_ids",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"order_pivot_ids"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
