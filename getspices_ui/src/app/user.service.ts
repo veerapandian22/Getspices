@@ -44,4 +44,8 @@ export class UserService {
     return this.http.post<any>('http://127.0.0.1:8000/api/subscribe', data);
   }
 
+  payment(data: any) {
+    return this.http.post<any>('http://127.0.0.1:8000/api/payment', data);
+  }
+
 }
