@@ -8,7 +8,7 @@ from .serializers import OderdetailsSerializer
 @api_view(['GET', 'DELETE'])
 def orders(request, login_user_id):
     if request.method == 'GET': 
-        snippets = Oderdetails.objects.filter(user_id = login_user_id)
+        snippets = Oderdetails.objects.filter(user_id=login_user_id)
         serializer = OderdetailsSerializer(snippets, many=True)
         return Response(serializer.data)
     

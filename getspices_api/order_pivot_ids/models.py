@@ -15,8 +15,8 @@ class OrderPivotIds(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    def __str__(self):
-        return self.order_id
+    # def __str__(self):
+    #     return self.order_id.__str__()
    
     class Meta:
         db_table = 'order_pivot_ids'

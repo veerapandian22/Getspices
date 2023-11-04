@@ -10,6 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class CheckoutComponent {
 
   user_id: any;
+  billing_details: any;
 
   constructor(
     private api: UserService,
@@ -24,13 +25,11 @@ export class CheckoutComponent {
   onPlaceOrder(data: any) {
     // FIXME: user id
     data["user_id"] = 1;
-    this.api.placeOrder(data).subscribe((res) => { console.warn('placeOrder', res) })
-    this.redirectToPayment();
-  }
-
-  redirectToPayment() {
-    // FIXME: user id
-    this.router.navigate(['payment'], { queryParams: {user_id: 1}});
+    this.api.placeOrder(data).subscribe((data) => { 
+      this.billing_details = data; 
+      const billing_id = this.billing_details['id']
+      this.router.navigate(['payment'], { queryParams: {bill_id: billing_id} });
+    });
   }
 
 }

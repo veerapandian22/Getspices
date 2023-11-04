@@ -23,7 +23,7 @@ def productItem(request):
 @api_view(['GET'])
 def productFilter(request, product_id):
     if request.method == 'GET':
-        snippets = ProductItem.objects.filter(product_id = product_id)
+        snippets = ProductItem.objects.filter(product_id=product_id)
         serializer = ProductItemSerializer(snippets, many=True)
         return Response(serializer.data)
 

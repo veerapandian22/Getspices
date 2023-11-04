@@ -9,16 +9,21 @@ import { UserService } from '../user.service';
 })
 export class PaymentComponent {
 
+  bill_id: any;
+
   constructor(
     private api: UserService,
     private router: Router,
     private activeRoute: ActivatedRoute
-  ) {}
+  ) {
+    this.activeRoute.queryParams.subscribe((params: any) => { this.bill_id = params });
+  }
 
   onSubmit(data: any) {
     // FIXME: user id
     const query: any = {};
     query['user_id'] = 1;
+    query['bill_id'] = this.bill_id['bill_id'];
     query['payment_verified_admin_name'] = 'system';  // default value for Initial payment
     if (data['pay'] == "UPI")
       query['is_upi'] = 1;

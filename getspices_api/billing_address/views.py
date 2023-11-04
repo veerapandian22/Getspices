@@ -1,31 +1,36 @@
-from rest_framework import status
-from rest_framework.decorators import api_view
-from rest_framework.response import Response
-from .models import BillingAddress
-from .serializers import BillingAddressSerializer
 from cart.models import Cart
+from .models import BillingAddress
 from orders.models import Oderdetails
+from global_config.http_response import *
+from rest_framework.decorators import api_view
+from .serializers import BillingAddressSerializer
+from global_config.order_maintenance import ORDER_PIVOT_IDS_BILLING
 
-@api_view(['GET','POST'])
+
+@api_view(['GET', 'POST'])
 def billing_address(request):
     if request.method == 'GET': 
         snippets = BillingAddress.objects.all()
         serializer = BillingAddressSerializer(snippets, many=True)
-        return Response(serializer.data)
+        return HTTP_OK(serializer.data)
     
-    elif request.method == 'POST': 
+    elif request.method == 'POST':
+        user_id = 1  # FIXME: user_id
+        order_id = []
         serializer = BillingAddressSerializer(data=request.data)
         if serializer.is_valid():
-            serializer.save()
+            billing_obj = serializer.save()
+            billing_id = billing_obj.id
 
             # copy data from cart to order_details table & remove products from cart.
-            # FIXME: user_id
-            cart_snippets = Cart.objects.filter(user_id = 1)
+            cart_snippets = Cart.objects.filter(user_id=user_id)
             for row in cart_snippets.values():
-                Oderdetails.objects.create(**row)
+                order_obj = Oderdetails.objects.create(**row)
+                order_id.append(order_obj.id)
             if cart_snippets:
-                Cart.objects.get(user_id = 1).delete()
+                Cart.objects.filter(user_id=user_id).delete()
 
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-    
+            ORDER_PIVOT_IDS_BILLING(user_id, billing_id, order_id)
+
+            return HTTP_CREATED(serializer.data)
+        return HTTP_BAD_REQUEST(serializer.errors)
