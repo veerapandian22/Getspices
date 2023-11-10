@@ -15,6 +15,10 @@ def HTTP_ACCEPTED(data: Any) -> Response:
     return Response(data, status=status.HTTP_202_ACCEPTED)
 
 
+def HTTP_NO_CONTENT() -> Response:
+    return Response(status=status.HTTP_204_NO_CONTENT)
+
+
 def HTTP_BAD_REQUEST(data: Any) -> Response:
     return Response(data, status=status.HTTP_400_BAD_REQUEST)
 

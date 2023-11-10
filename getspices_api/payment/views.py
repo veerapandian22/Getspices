@@ -1,6 +1,7 @@
 from .models import Payment
 from global_config.http_response import *
 from .serializers import PaymentSerializer
+from order_tracking.views import order_track
 from rest_framework.decorators import api_view
 from global_config.order_maintenance import ORDER_PIVOT_IDS_PAYMENT
 
@@ -20,8 +21,9 @@ def payment(request):
         if serializer.is_valid():
             payment_obj = serializer.save()
             payment_id = payment_obj.id
-
+            # update payment id in pivot table
             ORDER_PIVOT_IDS_PAYMENT(user_id, bill_id, payment_id)
+            order_track(bill_id, payment_id)
 
             return HTTP_CREATED(serializer.data)
         return HTTP_BAD_REQUEST(serializer.errors)
