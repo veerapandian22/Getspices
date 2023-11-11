@@ -56,14 +56,31 @@
                     <table>
                         <thead>
                             <tr>
-                                <th class="shoping__product">Products</th>
+                                <th class="shoping__product">Delivery Info</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                            <tr *ngFor="let item of deliveryInfo">
                                 <td class="shoping__cart__item">
                                     <img src="../assets/img/cart/cart-1.jpg" alt="">
-                                    <h5>cardamom Package</h5>
+                                    <h5>{{ item.order_id.product_item_id.item_name }}
+                                        <p>Grade: {{ item.order_id.product_item_id.item_grade }}</p>
+                                    </h5>
+                                    <p>Address: {{ item.billing_id.first_name }} {{ item.billing_id.last_name }}, {{ item.billing_id.address }}, 
+                                        {{ item.billing_id.city }}, {{ item.billing_id.state }} - {{ item.billing_id.pincode }}.
+                                    </p>
+                                    <p>Phone: {{ item.billing_id.mobile_no }}, Email: {{ item.billing_id.user_mail }}</p>
+                                </td>
+                                <td class="shoping__cart__price">
+                                    <p>
+                                        <input type="radio" [checked] = item.order_tracking_id.order_placed>---<input type="radio" [checked] = item.order_tracking_id.order_shipped>---<input type="radio" [checked] = item.order_tracking_id.order_delivered>
+                                        Status: Order Placed
+                                    </p>
+                                </td>
+                                <td class="shoping__cart__quantity">
+                                    <div class="quantity">
+                                        Rs.: 500
+                                    </div>
                                 </td>
                             </tr>
                         </tbody>

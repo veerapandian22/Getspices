@@ -29,6 +29,7 @@ def order_tracking(request):
         return HTTP_BAD_REQUEST(serializer.errors)
 
 
+# =========================================================================================================
 def order_track(bill_id: int, payment_id: int, user_id: int = None):
     user_id = 1
     query = {"user_id": user_id, "order_placed": 1}
@@ -38,4 +39,3 @@ def order_track(bill_id: int, payment_id: int, user_id: int = None):
         order_tracking_id = order_tracking_obj.id
         # update order tracking id in pivot table
         ORDER_PIVOT_IDS_TRACKING(user_id, bill_id, payment_id, order_tracking_id)
-    

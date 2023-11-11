@@ -10,6 +10,7 @@ def ORDER_PIVOT_IDS_BILLING(user_id: int, billing_id: int, order_ids: list):
             serializer.save()
 
 
+# ==================================================================================================================
 def ORDER_PIVOT_IDS_PAYMENT(user_id: int, bill_id: int, payment_id: int):
     queryset = OrderPivotIds.objects.filter(user_id=user_id, billing_id=bill_id).values_list('id', flat=True)
     list_of_ids = list(queryset)
@@ -21,6 +22,7 @@ def ORDER_PIVOT_IDS_PAYMENT(user_id: int, bill_id: int, payment_id: int):
             serializer.save()
 
 
+# ==================================================================================================================
 def ORDER_PIVOT_IDS_TRACKING(user_id: int, bill_id: int, payment_id: int, order_tracking_id: int):
     queryset = OrderPivotIds.objects.filter(user_id=user_id, billing_id=bill_id, payment_id=payment_id).values_list('id', flat=True)
     list_of_ids = list(queryset)

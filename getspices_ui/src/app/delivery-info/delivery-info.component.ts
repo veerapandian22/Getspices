@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UserService } from '../user.service';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -8,12 +9,20 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class DeliveryInfoComponent {
 
+  deliveryInfo: any;
+
   constructor(
+    private api: UserService,
     private toastr: ToastrService
   ) {}
 
   ngOnInit() {
+    this.getDeliveryInfo();
     this.showSuccess();
+  }
+
+  getDeliveryInfo() {
+    this.api.deliveryInfo().subscribe((res)=>{this.deliveryInfo = res, console.warn(this.deliveryInfo)});
   }
 
   showSuccess() {

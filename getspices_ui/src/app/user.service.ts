@@ -48,4 +48,8 @@ export class UserService {
     return this.http.post<any>('http://127.0.0.1:8000/api/payment', data);
   }
 
+  deliveryInfo() {
+    return this.http.get<any>('http://127.0.0.1:8000/api/order_pivot_ids');
+  }
+
 }

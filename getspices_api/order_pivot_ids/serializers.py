@@ -5,4 +5,6 @@ from .models import OrderPivotIds
 class OrderPivotIdsSerializer(serializers.ModelSerializer):
     class Meta:
         model = OrderPivotIds
-        fields = ('user_id', 'order_id', 'billing_id', 'payment_id', 'order_tracking_id')
+        # fields = ('user_id', 'order_id', 'billing_id', 'payment_id', 'order_tracking_id')
+        fields = ('order_id', 'order_tracking_id', 'billing_id')
+        depth = 2

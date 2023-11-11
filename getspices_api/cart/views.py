@@ -24,9 +24,10 @@ def cart(request):
         return HTTP_NO_CONTENT()
 
 
+# =========================================================================================================
 @api_view(['GET'])
 def user_cart(request, user_id):
     if request.method == 'GET':
         snippets = Cart.objects.filter(user_id=user_id)
         serializer = CartSerializer(snippets, many=True)
-        return Response(serializer.data)
+        return HTTP_OK(serializer.data)

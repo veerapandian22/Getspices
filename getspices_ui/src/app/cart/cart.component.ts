@@ -33,7 +33,7 @@ export class CartComponent {
   cartDetails() {
     // FIXME: user_id
     const user_id = 1;
-    this.api.getCartDetails(user_id).subscribe((res: any) => { this.items_in_cart = res});
+    this.api.getCartDetails(user_id).subscribe((res: any) => { this.items_in_cart = res, console.warn(res)});
   }
 
   removeItemFromCart(id: number) {
