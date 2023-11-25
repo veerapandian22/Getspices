@@ -71,16 +71,16 @@
                                     </p>
                                     <p>Phone: {{ item.billing_id.mobile_no }}, Email: {{ item.billing_id.user_mail }}</p>
                                 </td>
+                                <td class="shoping__cart__quantity">
+                                    <div class="quantity">
+                                        Rs.: 500
+                                    </div>
+                                </td>
                                 <td class="shoping__cart__price">
                                     <p>
                                         <input type="radio" [checked] = item.order_tracking_id.order_placed>---<input type="radio" [checked] = item.order_tracking_id.order_shipped>---<input type="radio" [checked] = item.order_tracking_id.order_delivered>
                                         Status: Order Placed
                                     </p>
-                                </td>
-                                <td class="shoping__cart__quantity">
-                                    <div class="quantity">
-                                        Rs.: 500
-                                    </div>
                                 </td>
                             </tr>
                         </tbody>

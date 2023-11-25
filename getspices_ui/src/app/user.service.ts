@@ -52,4 +52,8 @@ export class UserService {
     return this.http.get<any>('http://127.0.0.1:8000/api/order_pivot_ids');
   }
 
+  userLogin(data: any) {
+    return this.http.post<any>('http://127.0.0.1:8000/login', data);
+  }
+
 }

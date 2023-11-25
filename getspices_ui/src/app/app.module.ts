@@ -21,6 +21,8 @@ import { ShopDetailsComponent } from './shop-details/shop-details.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { PaymentComponent } from './payment/payment.component';
+import { RegistrationComponent } from './registration/registration.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { PaymentComponent } from './payment/payment.component';
     SitemapComponent,
     InnovationComponent,
     ShopDetailsComponent,
-    PaymentComponent
+    PaymentComponent,
+    RegistrationComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

@@ -12,6 +12,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { DeliveryInfoComponent } from './delivery-info/delivery-info.component';
 import { SitemapComponent } from './sitemap/sitemap.component';
 import { InnovationComponent } from './innovation/innovation.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'contact_us', component: ContactUsComponent },
   { path: 'sitemap', component: SitemapComponent },
   { path: 'innovation', component: InnovationComponent },
+  { path: 'login', component: LoginComponent },
 ];
 
 @NgModule({

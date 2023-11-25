@@ -27,9 +27,14 @@ from orders import urls as orders_urls
 from payment import urls as payment_urls
 from order_pivot_ids import urls as order_pivot_urls
 from order_tracking import urls as order_tracking_urls
+from auth.views import MyObtainTokenPairView, RegisterView
+from rest_framework_simplejwt.views import TokenRefreshView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('login', MyObtainTokenPairView.as_view(), name='token_obtain_pair'),
+    path('login/refresh', TokenRefreshView.as_view(), name='token_refresh'),
+    path('register', RegisterView.as_view(), name='auth_register'),
     path('api/', include([
         path('', include(user_urls)),
         path('', include(subscribe_urls)),
