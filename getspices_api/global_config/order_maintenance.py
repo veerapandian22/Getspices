@@ -1,5 +1,5 @@
-from order_pivot_ids.serializers import OrderPivotIdsSerializer
 from order_pivot_ids.models import OrderPivotIds
+from order_pivot_ids.serializers import OrderPivotIdsSerializer
 
 
 def ORDER_PIVOT_IDS_BILLING(user_id: int, billing_id: int, order_ids: list):

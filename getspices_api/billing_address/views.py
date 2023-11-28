@@ -2,12 +2,14 @@ from cart.models import Cart
 from .models import BillingAddress
 from orders.models import Oderdetails
 from global_config.http_response import *
-from rest_framework.decorators import api_view
 from .serializers import BillingAddressSerializer
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.decorators import api_view, permission_classes
 from global_config.order_maintenance import ORDER_PIVOT_IDS_BILLING
 
 
 @api_view(['GET', 'POST'])
+@permission_classes([IsAuthenticated])
 def billing_address(request):
     if request.method == 'GET': 
         snippets = BillingAddress.objects.all()

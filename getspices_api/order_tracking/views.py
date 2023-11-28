@@ -1,12 +1,13 @@
-from rest_framework import status
 from .models import OrderTracking
 from global_config.http_response import *
-from rest_framework.decorators import api_view
 from .serializers import OrderTrackingSerializer
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.decorators import api_view, permission_classes
 from global_config.order_maintenance import ORDER_PIVOT_IDS_TRACKING
 
 
 @api_view(['GET', 'POST', 'PATCH'])
+@permission_classes([IsAuthenticated])
 def order_tracking(request):
     if request.method == 'GET':
         snippets = OrderTracking.objects.all()

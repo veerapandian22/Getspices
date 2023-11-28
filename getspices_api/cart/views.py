@@ -1,11 +1,12 @@
 from .models import Cart
-from rest_framework import status
 from .serializers import CartSerializer
 from global_config.http_response import *
-from rest_framework.decorators import api_view
+from rest_framework.permissions import IsAuthenticated, AllowAny
+from rest_framework.decorators import api_view, permission_classes
 
 
-@api_view(['GET','POST', 'DELETE'])
+@api_view(['GET', 'POST', 'DELETE'])
+@permission_classes([IsAuthenticated])
 def cart(request):
     if request.method == 'GET': 
         snippets = Cart.objects.all()
@@ -26,6 +27,7 @@ def cart(request):
 
 # =========================================================================================================
 @api_view(['GET'])
+@permission_classes([AllowAny])
 def user_cart(request, user_id):
     if request.method == 'GET':
         snippets = Cart.objects.filter(user_id=user_id)

@@ -2,11 +2,13 @@ from .models import Payment
 from global_config.http_response import *
 from .serializers import PaymentSerializer
 from order_tracking.views import order_track
-from rest_framework.decorators import api_view
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.decorators import api_view, permission_classes
 from global_config.order_maintenance import ORDER_PIVOT_IDS_PAYMENT
 
 
 @api_view(['GET', 'POST', 'PATCH'])
+@permission_classes([IsAuthenticated])
 def payment(request):
     if request.method == 'GET': 
         snippets = Payment.objects.all()
